@@ -4,7 +4,7 @@ const server = http.createServer((req, res) => {
   if (req.url === '/crash') {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end('Crashing server...');
-    process.exit(1);
+    throw new Errow('wocao');
   }
 
   res.writeHead(200, { 'Content-Type': 'text/plain' });
